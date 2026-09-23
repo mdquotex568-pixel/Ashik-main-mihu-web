@@ -323,8 +323,6 @@
   .final-hearts { margin-top: 40px; font-size: 2rem; color: var(--pink); letter-spacing: 12px; }
   .final-hearts span { display: inline-block; animation: heartbeat 1.2s ease-in-out infinite; }
   .final-hearts span:nth-child(2) { animation-delay: 0.2s; }
-  .final-hearts span:nth-child(3) { animation-delay: 0.4s; }
-  .final-hearts span:nth-child(4) { animation-delay: 0.6s; }
   .css-note { max-width: 520px; margin: 40px auto 0; background: rgba(0, 0, 0, 0.4); border-left: 3px solid var(--pink); border-radius: 8px; padding: 18px 20px; font-family: 'Courier New', monospace; font-size: 0.82rem; color: #9dd6c8; text-align: left; line-height: 1.8; white-space: pre-wrap; }
   .css-note .key { color: #ff8fb8; }
   .css-note .val { color: #ffd96a; }
@@ -342,9 +340,9 @@
 <div class="stars" id="stars"></div>
 <div class="hearts-bg" id="heartsBg"></div>
 
-<!-- BACKGROUND MUSIC (GitHub MP3) -->
-<audio id="bgMusic" loop preload="auto" playsinline>
-  <source src="song.mp3" type="audio/mpeg">
+<!-- BACKGROUND MUSIC (mp3tourl direct link) -->
+<audio id="bgMusic" loop preload="auto" playsinline crossorigin="anonymous">
+  <source src="https://mp3tourl.com/audio/1790174787282-dfc5db68-4ddc-4b60-bf94-5ca77682bf69.mp3" type="audio/mpeg">
 </audio>
 
 <div class="intro" id="intro">
@@ -1013,11 +1011,11 @@ timelineEvents.forEach(ev => {
   timelineEl.appendChild(item);
 });
 
-/* ========== BACKGROUND MUSIC (scroll = auto unmute) ========== */
+/* ========== BACKGROUND MUSIC (mp3tourl direct link) ========== */
 const bgMusic = document.getElementById('bgMusic');
 let musicStarted = false;
 
-// পেজ খুললেই muted-এ চালু (কোনো দেরি নেই, instant)
+// পেজ খুললেই muted-এ চালু (instant, কোনো দেরি নেই)
 bgMusic.volume = 0;
 bgMusic.muted = true;
 bgMusic.play().catch(() => {});
@@ -1036,4 +1034,4 @@ function startMusic() {
 });
 </script>
 </body>
-                      </html>
+  </html>
